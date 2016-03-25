@@ -30,11 +30,11 @@ public class Hello {
 
 	@RequestMapping("/hello")
 	public ModelAndView hello() {
-		User user = userService.getUserById(1);
+		//User user = userService.getUserById(1);
 
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("spring", "spring mvc" + user.getPassword());
-		mv.addObject("spring", "spring mvc");
+		//mv.addObject("spring", "spring mvc" + user.getPassword());
+		mv.addObject("spring", "spring在 mvc");
 		mv.setViewName("hello");
 		return mv;
 	}
