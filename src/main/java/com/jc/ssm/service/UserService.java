@@ -2,7 +2,6 @@ package com.jc.ssm.service;
 
 
 import javax.annotation.Resource;
-
 import org.springframework.stereotype.Component;
 
 import com.jc.ssm.dao.UserDao;

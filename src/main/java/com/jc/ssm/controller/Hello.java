@@ -22,18 +22,19 @@ public class Hello {
 		this.userService = userService;
 	}
 
-	public void test() {
-		System.out.println("hello");
+	@RequestMapping("/test")
+	public ModelAndView test() {
+		ModelAndView mv = new ModelAndView();
 		User user = userService.getUserById(1);
 		System.out.println(user.getPassword());
+		mv.addObject("user", user.getUserName() + " " + user.getPassword());
+		mv.setViewName("test");
+		return mv;
 	}
 
 	@RequestMapping("/hello")
 	public ModelAndView hello() {
-		//User user = userService.getUserById(1);
-
 		ModelAndView mv = new ModelAndView();
-		//mv.addObject("spring", "spring mvc" + user.getPassword());
 		mv.addObject("spring", "spring在 mvc");
 		mv.setViewName("hello");
 		return mv;
